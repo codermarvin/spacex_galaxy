@@ -2,7 +2,7 @@
 
 > **Note:** This project was intentionally scoped to fit the requested **4-hour Flutter technical challenge**. Planned improvements and future enhancements are listed below.
 
-A kid-friendly Flutter app exploring **SpaceX rockets** and **launches** using **BLoC**, **Chopper**, **Freezed**, and **GoRouter**.
+A polished, space-themed Flutter app for exploring **SpaceX rockets** and **launches** using **BLoC**, **Chopper**, **Freezed**, and **GoRouter**.
 
 This project was built as a Flutter technical challenge to demonstrate:
 
@@ -15,9 +15,9 @@ This project was built as a Flutter technical challenge to demonstrate:
 
 ## ✨ Overview
 
-**SpaceX Galaxy Explorer** is a playful, space-themed Flutter app designed to make SpaceX data fun and approachable.
+**SpaceX Galaxy Explorer** is a playful, space-themed Flutter app that makes SpaceX data engaging and approachable while keeping the codebase maintainable and scalable.
 
-The app consumes data from the **SpaceX API** and presents it in a colorful, kid-friendly interface while keeping the codebase maintainable and scalable.
+The app consumes data from the **SpaceX API** and presents it through a clean, responsive UI with a strong focus on architecture, usability, and code quality.
 
 ---
 
@@ -28,6 +28,7 @@ The goal of this project is to showcase the ability to:
 - consume data from multiple API endpoints
 - manage state predictably
 - structure Flutter code for scalability
+- present API-driven data clearly to end users
 
 ---
 
@@ -43,11 +44,13 @@ The goal of this project is to showcase the ability to:
 
 ## 📡 API Endpoints Used
 
-This app integrates with the **SpaceX API** using at least two endpoints from different controllers.
+This app integrates with the **SpaceX API** using multiple endpoints across two different controllers.
 
-### Endpoints used
+**Rockets**
 - `/v4/rockets`
 - `/v4/rockets/:id`
+
+**Launches**
 - `/v4/launches`
 - `/v4/launches/:id`
 
@@ -60,10 +63,19 @@ This app integrates with the **SpaceX API** using at least two endpoints from di
 
 - Browse **SpaceX rockets**
 - View **launches**
-- Kid-friendly UI with playful colors and spacing
+- Clean, space-themed UI with playful visual styling
 - Friendly loading, empty, and error states
 - Reusable design tokens (colors, typography, spacing)
 - Clean feature-first folder structure
+
+---
+
+## 🧠 Key Technical Decisions
+
+- Chose **Rockets** and **Launches** because they are related datasets and demonstrate working across multiple API controllers.
+- Used **BLoC** to keep presentation and business logic separated for predictable and scalable state management.
+- Used **Chopper** for structured API integration and **Freezed** for immutable, type-safe models and state handling.
+- Kept the scope intentionally focused to fit the **4-hour time limit**, prioritizing architecture, maintainability, and user experience over additional features.
 
 ---
 
@@ -71,21 +83,21 @@ This app integrates with the **SpaceX API** using at least two endpoints from di
 
 If given more time, the next planned improvements would be:
 
-### Data & Offline
+**Data & Offline**
 - Add **persistent offline caching** (e.g. Hive or Drift) for previously fetched rockets and launches
 - Preserve the **last successful API response** between app launches
 - Support a smoother **offline-aware experience** when the network is unavailable
 
-### UX Enhancements
+**UX Enhancements**
 - Add **pull-to-refresh** for rockets and launches
 - Add **search and filtering** for easier content discovery
 - Improve loading states with more playful animations and transitions
 
-### Architecture & Scalability
+**Architecture & Scalability**
 - Introduce **dependency injection** (e.g. `get_it` / `injectable`) for larger-scale maintainability
 - Expand shared abstractions and reusable components as the app grows
 
-### Internationalization
+**Internationalization**
 - Add **full localization support** for multiple languages
 - Move user-facing strings into a generated localization workflow for easier scaling
 
