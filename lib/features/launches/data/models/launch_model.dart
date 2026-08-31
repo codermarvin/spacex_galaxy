@@ -9,10 +9,10 @@ abstract class LaunchModel with _$LaunchModel {
     required String id,
     required String name,
     @JsonKey(name: 'date_utc') required DateTime dateUtc,
-    @JsonKey(name: 'flight_number') required int flightNumber,
+    @JsonKey(name: 'flight_number') @Default(0) int flightNumber,
     bool? success,
     String? details,
-    required LaunchLinks links,
+    @Default(LaunchLinks()) LaunchLinks links,
     @Default(false) bool upcoming,
     String? rocket,
     List<String>? crew,
@@ -20,10 +20,23 @@ abstract class LaunchModel with _$LaunchModel {
     List<String>? capsules,
     List<String>? payloads,
     String? launchpad,
+    String? status,
   }) = _LaunchModel;
 
   factory LaunchModel.fromJson(Map<String, dynamic> json) =>
-      _$LaunchModelFromJson(json);
+      _$LaunchModelFromJson(_transformJson(json));
+
+  static Map<String, dynamic> _transformJson(Map<String, dynamic> json) {
+    final Map<String, dynamic> mutableJson = Map<String, dynamic>.from(json);
+    mutableJson['id'] ??= mutableJson['name'] ?? '';
+    mutableJson['flight_number'] ??= 0;
+    mutableJson['details'] ??= mutableJson['status'];
+    if (mutableJson['date_utc'] == null) {
+      mutableJson['date_utc'] = DateTime.now().toIso8601String();
+    }
+    mutableJson['links'] ??= <String, dynamic>{};
+    return mutableJson;
+  }
 }
 
 @freezed

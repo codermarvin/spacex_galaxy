@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$LaunchModel {
 
- String get id; String get name;@JsonKey(name: 'date_utc') DateTime get dateUtc;@JsonKey(name: 'flight_number') int get flightNumber; bool? get success; String? get details; LaunchLinks get links; bool get upcoming; String? get rocket; List<String>? get crew; List<String>? get ships; List<String>? get capsules; List<String>? get payloads; String? get launchpad;
+ String get id; String get name;@JsonKey(name: 'date_utc') DateTime get dateUtc;@JsonKey(name: 'flight_number') int get flightNumber; bool? get success; String? get details; LaunchLinks get links; bool get upcoming; String? get rocket; List<String>? get crew; List<String>? get ships; List<String>? get capsules; List<String>? get payloads; String? get launchpad; String? get status;
 /// Create a copy of LaunchModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $LaunchModelCopyWith<LaunchModel> get copyWith => _$LaunchModelCopyWithImpl<Laun
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is LaunchModel&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.dateUtc, dateUtc) || other.dateUtc == dateUtc)&&(identical(other.flightNumber, flightNumber) || other.flightNumber == flightNumber)&&(identical(other.success, success) || other.success == success)&&(identical(other.details, details) || other.details == details)&&(identical(other.links, links) || other.links == links)&&(identical(other.upcoming, upcoming) || other.upcoming == upcoming)&&(identical(other.rocket, rocket) || other.rocket == rocket)&&const DeepCollectionEquality().equals(other.crew, crew)&&const DeepCollectionEquality().equals(other.ships, ships)&&const DeepCollectionEquality().equals(other.capsules, capsules)&&const DeepCollectionEquality().equals(other.payloads, payloads)&&(identical(other.launchpad, launchpad) || other.launchpad == launchpad));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LaunchModel&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.dateUtc, dateUtc) || other.dateUtc == dateUtc)&&(identical(other.flightNumber, flightNumber) || other.flightNumber == flightNumber)&&(identical(other.success, success) || other.success == success)&&(identical(other.details, details) || other.details == details)&&(identical(other.links, links) || other.links == links)&&(identical(other.upcoming, upcoming) || other.upcoming == upcoming)&&(identical(other.rocket, rocket) || other.rocket == rocket)&&const DeepCollectionEquality().equals(other.crew, crew)&&const DeepCollectionEquality().equals(other.ships, ships)&&const DeepCollectionEquality().equals(other.capsules, capsules)&&const DeepCollectionEquality().equals(other.payloads, payloads)&&(identical(other.launchpad, launchpad) || other.launchpad == launchpad)&&(identical(other.status, status) || other.status == status));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,dateUtc,flightNumber,success,details,links,upcoming,rocket,const DeepCollectionEquality().hash(crew),const DeepCollectionEquality().hash(ships),const DeepCollectionEquality().hash(capsules),const DeepCollectionEquality().hash(payloads),launchpad);
+int get hashCode => Object.hash(runtimeType,id,name,dateUtc,flightNumber,success,details,links,upcoming,rocket,const DeepCollectionEquality().hash(crew),const DeepCollectionEquality().hash(ships),const DeepCollectionEquality().hash(capsules),const DeepCollectionEquality().hash(payloads),launchpad,status);
 
 @override
 String toString() {
-  return 'LaunchModel(id: $id, name: $name, dateUtc: $dateUtc, flightNumber: $flightNumber, success: $success, details: $details, links: $links, upcoming: $upcoming, rocket: $rocket, crew: $crew, ships: $ships, capsules: $capsules, payloads: $payloads, launchpad: $launchpad)';
+  return 'LaunchModel(id: $id, name: $name, dateUtc: $dateUtc, flightNumber: $flightNumber, success: $success, details: $details, links: $links, upcoming: $upcoming, rocket: $rocket, crew: $crew, ships: $ships, capsules: $capsules, payloads: $payloads, launchpad: $launchpad, status: $status)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $LaunchModelCopyWith<$Res>  {
   factory $LaunchModelCopyWith(LaunchModel value, $Res Function(LaunchModel) _then) = _$LaunchModelCopyWithImpl;
 @useResult
 $Res call({
- String id, String name,@JsonKey(name: 'date_utc') DateTime dateUtc,@JsonKey(name: 'flight_number') int flightNumber, bool? success, String? details, LaunchLinks links, bool upcoming, String? rocket, List<String>? crew, List<String>? ships, List<String>? capsules, List<String>? payloads, String? launchpad
+ String id, String name,@JsonKey(name: 'date_utc') DateTime dateUtc,@JsonKey(name: 'flight_number') int flightNumber, bool? success, String? details, LaunchLinks links, bool upcoming, String? rocket, List<String>? crew, List<String>? ships, List<String>? capsules, List<String>? payloads, String? launchpad, String? status
 });
 
 
@@ -65,7 +65,7 @@ class _$LaunchModelCopyWithImpl<$Res>
 
 /// Create a copy of LaunchModel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? dateUtc = null,Object? flightNumber = null,Object? success = freezed,Object? details = freezed,Object? links = null,Object? upcoming = null,Object? rocket = freezed,Object? crew = freezed,Object? ships = freezed,Object? capsules = freezed,Object? payloads = freezed,Object? launchpad = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? dateUtc = null,Object? flightNumber = null,Object? success = freezed,Object? details = freezed,Object? links = null,Object? upcoming = null,Object? rocket = freezed,Object? crew = freezed,Object? ships = freezed,Object? capsules = freezed,Object? payloads = freezed,Object? launchpad = freezed,Object? status = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -81,6 +81,7 @@ as List<String>?,ships: freezed == ships ? _self.ships : ships // ignore: cast_n
 as List<String>?,capsules: freezed == capsules ? _self.capsules : capsules // ignore: cast_nullable_to_non_nullable
 as List<String>?,payloads: freezed == payloads ? _self.payloads : payloads // ignore: cast_nullable_to_non_nullable
 as List<String>?,launchpad: freezed == launchpad ? _self.launchpad : launchpad // ignore: cast_nullable_to_non_nullable
+as String?,status: freezed == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }
@@ -175,10 +176,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'date_utc')  DateTime dateUtc, @JsonKey(name: 'flight_number')  int flightNumber,  bool? success,  String? details,  LaunchLinks links,  bool upcoming,  String? rocket,  List<String>? crew,  List<String>? ships,  List<String>? capsules,  List<String>? payloads,  String? launchpad)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'date_utc')  DateTime dateUtc, @JsonKey(name: 'flight_number')  int flightNumber,  bool? success,  String? details,  LaunchLinks links,  bool upcoming,  String? rocket,  List<String>? crew,  List<String>? ships,  List<String>? capsules,  List<String>? payloads,  String? launchpad,  String? status)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _LaunchModel() when $default != null:
-return $default(_that.id,_that.name,_that.dateUtc,_that.flightNumber,_that.success,_that.details,_that.links,_that.upcoming,_that.rocket,_that.crew,_that.ships,_that.capsules,_that.payloads,_that.launchpad);case _:
+return $default(_that.id,_that.name,_that.dateUtc,_that.flightNumber,_that.success,_that.details,_that.links,_that.upcoming,_that.rocket,_that.crew,_that.ships,_that.capsules,_that.payloads,_that.launchpad,_that.status);case _:
   return orElse();
 
 }
@@ -196,10 +197,10 @@ return $default(_that.id,_that.name,_that.dateUtc,_that.flightNumber,_that.succe
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'date_utc')  DateTime dateUtc, @JsonKey(name: 'flight_number')  int flightNumber,  bool? success,  String? details,  LaunchLinks links,  bool upcoming,  String? rocket,  List<String>? crew,  List<String>? ships,  List<String>? capsules,  List<String>? payloads,  String? launchpad)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'date_utc')  DateTime dateUtc, @JsonKey(name: 'flight_number')  int flightNumber,  bool? success,  String? details,  LaunchLinks links,  bool upcoming,  String? rocket,  List<String>? crew,  List<String>? ships,  List<String>? capsules,  List<String>? payloads,  String? launchpad,  String? status)  $default,) {final _that = this;
 switch (_that) {
 case _LaunchModel():
-return $default(_that.id,_that.name,_that.dateUtc,_that.flightNumber,_that.success,_that.details,_that.links,_that.upcoming,_that.rocket,_that.crew,_that.ships,_that.capsules,_that.payloads,_that.launchpad);case _:
+return $default(_that.id,_that.name,_that.dateUtc,_that.flightNumber,_that.success,_that.details,_that.links,_that.upcoming,_that.rocket,_that.crew,_that.ships,_that.capsules,_that.payloads,_that.launchpad,_that.status);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -216,10 +217,10 @@ return $default(_that.id,_that.name,_that.dateUtc,_that.flightNumber,_that.succe
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(name: 'date_utc')  DateTime dateUtc, @JsonKey(name: 'flight_number')  int flightNumber,  bool? success,  String? details,  LaunchLinks links,  bool upcoming,  String? rocket,  List<String>? crew,  List<String>? ships,  List<String>? capsules,  List<String>? payloads,  String? launchpad)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(name: 'date_utc')  DateTime dateUtc, @JsonKey(name: 'flight_number')  int flightNumber,  bool? success,  String? details,  LaunchLinks links,  bool upcoming,  String? rocket,  List<String>? crew,  List<String>? ships,  List<String>? capsules,  List<String>? payloads,  String? launchpad,  String? status)?  $default,) {final _that = this;
 switch (_that) {
 case _LaunchModel() when $default != null:
-return $default(_that.id,_that.name,_that.dateUtc,_that.flightNumber,_that.success,_that.details,_that.links,_that.upcoming,_that.rocket,_that.crew,_that.ships,_that.capsules,_that.payloads,_that.launchpad);case _:
+return $default(_that.id,_that.name,_that.dateUtc,_that.flightNumber,_that.success,_that.details,_that.links,_that.upcoming,_that.rocket,_that.crew,_that.ships,_that.capsules,_that.payloads,_that.launchpad,_that.status);case _:
   return null;
 
 }
@@ -231,7 +232,7 @@ return $default(_that.id,_that.name,_that.dateUtc,_that.flightNumber,_that.succe
 @JsonSerializable()
 
 class _LaunchModel implements LaunchModel {
-  const _LaunchModel({required this.id, required this.name, @JsonKey(name: 'date_utc') required this.dateUtc, @JsonKey(name: 'flight_number') required this.flightNumber, this.success, this.details, required this.links, this.upcoming = false, this.rocket, final  List<String>? crew, final  List<String>? ships, final  List<String>? capsules, final  List<String>? payloads, this.launchpad}): _crew = crew,_ships = ships,_capsules = capsules,_payloads = payloads;
+  const _LaunchModel({required this.id, required this.name, @JsonKey(name: 'date_utc') required this.dateUtc, @JsonKey(name: 'flight_number') this.flightNumber = 0, this.success, this.details, this.links = const LaunchLinks(), this.upcoming = false, this.rocket, final  List<String>? crew, final  List<String>? ships, final  List<String>? capsules, final  List<String>? payloads, this.launchpad, this.status}): _crew = crew,_ships = ships,_capsules = capsules,_payloads = payloads;
   factory _LaunchModel.fromJson(Map<String, dynamic> json) => _$LaunchModelFromJson(json);
 
 @override final  String id;
@@ -240,7 +241,7 @@ class _LaunchModel implements LaunchModel {
 @override@JsonKey(name: 'flight_number') final  int flightNumber;
 @override final  bool? success;
 @override final  String? details;
-@override final  LaunchLinks links;
+@override@JsonKey() final  LaunchLinks links;
 @override@JsonKey() final  bool upcoming;
 @override final  String? rocket;
  final  List<String>? _crew;
@@ -280,6 +281,7 @@ class _LaunchModel implements LaunchModel {
 }
 
 @override final  String? launchpad;
+@override final  String? status;
 
 /// Create a copy of LaunchModel
 /// with the given fields replaced by the non-null parameter values.
@@ -294,16 +296,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LaunchModel&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.dateUtc, dateUtc) || other.dateUtc == dateUtc)&&(identical(other.flightNumber, flightNumber) || other.flightNumber == flightNumber)&&(identical(other.success, success) || other.success == success)&&(identical(other.details, details) || other.details == details)&&(identical(other.links, links) || other.links == links)&&(identical(other.upcoming, upcoming) || other.upcoming == upcoming)&&(identical(other.rocket, rocket) || other.rocket == rocket)&&const DeepCollectionEquality().equals(other._crew, _crew)&&const DeepCollectionEquality().equals(other._ships, _ships)&&const DeepCollectionEquality().equals(other._capsules, _capsules)&&const DeepCollectionEquality().equals(other._payloads, _payloads)&&(identical(other.launchpad, launchpad) || other.launchpad == launchpad));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LaunchModel&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.dateUtc, dateUtc) || other.dateUtc == dateUtc)&&(identical(other.flightNumber, flightNumber) || other.flightNumber == flightNumber)&&(identical(other.success, success) || other.success == success)&&(identical(other.details, details) || other.details == details)&&(identical(other.links, links) || other.links == links)&&(identical(other.upcoming, upcoming) || other.upcoming == upcoming)&&(identical(other.rocket, rocket) || other.rocket == rocket)&&const DeepCollectionEquality().equals(other._crew, _crew)&&const DeepCollectionEquality().equals(other._ships, _ships)&&const DeepCollectionEquality().equals(other._capsules, _capsules)&&const DeepCollectionEquality().equals(other._payloads, _payloads)&&(identical(other.launchpad, launchpad) || other.launchpad == launchpad)&&(identical(other.status, status) || other.status == status));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,dateUtc,flightNumber,success,details,links,upcoming,rocket,const DeepCollectionEquality().hash(_crew),const DeepCollectionEquality().hash(_ships),const DeepCollectionEquality().hash(_capsules),const DeepCollectionEquality().hash(_payloads),launchpad);
+int get hashCode => Object.hash(runtimeType,id,name,dateUtc,flightNumber,success,details,links,upcoming,rocket,const DeepCollectionEquality().hash(_crew),const DeepCollectionEquality().hash(_ships),const DeepCollectionEquality().hash(_capsules),const DeepCollectionEquality().hash(_payloads),launchpad,status);
 
 @override
 String toString() {
-  return 'LaunchModel(id: $id, name: $name, dateUtc: $dateUtc, flightNumber: $flightNumber, success: $success, details: $details, links: $links, upcoming: $upcoming, rocket: $rocket, crew: $crew, ships: $ships, capsules: $capsules, payloads: $payloads, launchpad: $launchpad)';
+  return 'LaunchModel(id: $id, name: $name, dateUtc: $dateUtc, flightNumber: $flightNumber, success: $success, details: $details, links: $links, upcoming: $upcoming, rocket: $rocket, crew: $crew, ships: $ships, capsules: $capsules, payloads: $payloads, launchpad: $launchpad, status: $status)';
 }
 
 
@@ -314,7 +316,7 @@ abstract mixin class _$LaunchModelCopyWith<$Res> implements $LaunchModelCopyWith
   factory _$LaunchModelCopyWith(_LaunchModel value, $Res Function(_LaunchModel) _then) = __$LaunchModelCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name,@JsonKey(name: 'date_utc') DateTime dateUtc,@JsonKey(name: 'flight_number') int flightNumber, bool? success, String? details, LaunchLinks links, bool upcoming, String? rocket, List<String>? crew, List<String>? ships, List<String>? capsules, List<String>? payloads, String? launchpad
+ String id, String name,@JsonKey(name: 'date_utc') DateTime dateUtc,@JsonKey(name: 'flight_number') int flightNumber, bool? success, String? details, LaunchLinks links, bool upcoming, String? rocket, List<String>? crew, List<String>? ships, List<String>? capsules, List<String>? payloads, String? launchpad, String? status
 });
 
 
@@ -331,7 +333,7 @@ class __$LaunchModelCopyWithImpl<$Res>
 
 /// Create a copy of LaunchModel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? dateUtc = null,Object? flightNumber = null,Object? success = freezed,Object? details = freezed,Object? links = null,Object? upcoming = null,Object? rocket = freezed,Object? crew = freezed,Object? ships = freezed,Object? capsules = freezed,Object? payloads = freezed,Object? launchpad = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? dateUtc = null,Object? flightNumber = null,Object? success = freezed,Object? details = freezed,Object? links = null,Object? upcoming = null,Object? rocket = freezed,Object? crew = freezed,Object? ships = freezed,Object? capsules = freezed,Object? payloads = freezed,Object? launchpad = freezed,Object? status = freezed,}) {
   return _then(_LaunchModel(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -347,6 +349,7 @@ as List<String>?,ships: freezed == ships ? _self._ships : ships // ignore: cast_
 as List<String>?,capsules: freezed == capsules ? _self._capsules : capsules // ignore: cast_nullable_to_non_nullable
 as List<String>?,payloads: freezed == payloads ? _self._payloads : payloads // ignore: cast_nullable_to_non_nullable
 as List<String>?,launchpad: freezed == launchpad ? _self.launchpad : launchpad // ignore: cast_nullable_to_non_nullable
+as String?,status: freezed == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }

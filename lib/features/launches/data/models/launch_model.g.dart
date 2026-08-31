@@ -10,10 +10,12 @@ _LaunchModel _$LaunchModelFromJson(Map<String, dynamic> json) => _LaunchModel(
   id: json['id'] as String,
   name: json['name'] as String,
   dateUtc: DateTime.parse(json['date_utc'] as String),
-  flightNumber: (json['flight_number'] as num).toInt(),
+  flightNumber: (json['flight_number'] as num?)?.toInt() ?? 0,
   success: json['success'] as bool?,
   details: json['details'] as String?,
-  links: LaunchLinks.fromJson(json['links'] as Map<String, dynamic>),
+  links: json['links'] == null
+      ? const LaunchLinks()
+      : LaunchLinks.fromJson(json['links'] as Map<String, dynamic>),
   upcoming: json['upcoming'] as bool? ?? false,
   rocket: json['rocket'] as String?,
   crew: (json['crew'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -25,6 +27,7 @@ _LaunchModel _$LaunchModelFromJson(Map<String, dynamic> json) => _LaunchModel(
       ?.map((e) => e as String)
       .toList(),
   launchpad: json['launchpad'] as String?,
+  status: json['status'] as String?,
 );
 
 Map<String, dynamic> _$LaunchModelToJson(_LaunchModel instance) =>
@@ -43,6 +46,7 @@ Map<String, dynamic> _$LaunchModelToJson(_LaunchModel instance) =>
       'capsules': instance.capsules,
       'payloads': instance.payloads,
       'launchpad': instance.launchpad,
+      'status': instance.status,
     };
 
 _LaunchLinks _$LaunchLinksFromJson(Map<String, dynamic> json) => _LaunchLinks(
